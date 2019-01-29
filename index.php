@@ -1,20 +1,22 @@
 <?php
-include_once("Assets/Includes/conn.php");
+include_once "Assets/Includes/conn.php";
 mysqli_close($mySqlConnection);
 require 'header.php';
 ?>
     <body>
-        <form action="music_add.php" method="post">
-            <fieldset>
-                <legend>WELKOM BEZOEKER</legend>
+		<div class="container">
+		<div class="left"></div>
+		<div class="right">
+			<div class="formbox">
+				<form action="music_add.php" method="post">
+				<h4>Welkom bezoeker</h4>
                 <label>Username:</label> <input type="text" name="name" ><br><br>
                 <label>Email:</label> <input type="email" name="email" required><br><br>
+				<input type="submit" value="Bewaar">
 
-                //nog reCAPTCHA voorzien, vraag key aan via google!!!!!
-                //<!--httpwww.google.com/recaptcha/admin#list-->
-                //<!--httpswww.antagonist.nl/blog/2017/03/recaptcha/-->
-            </fieldset>
-            <input type="submit" value="Bewaar">
-        </form>
+				</form>
+			</div>
+		</div>
+	</div>
     </body>
 </html>
