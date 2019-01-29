@@ -1,17 +1,8 @@
 <?php
 include_once("Assets/Includes/conn.php");
 mysqli_close($mySqlConnection);
+require 'header.php';
 ?>
-
-
-<!-- HTML __________________________________________________________________ -->
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Formulier voor registratie</title>
-    </head>
     <body>
         <form action="music_add.php" method="post">
             <fieldset>

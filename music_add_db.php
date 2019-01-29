@@ -14,8 +14,6 @@ echo "<br>";
 
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -25,7 +23,7 @@ echo "<br>";
     <body>
         <form action="music_db.php" method="post">
             <fieldset>
-                <legend>Geef je favouriete songs in: </legend>
+                <legend>Geef je favouriete liedjes op: </legend>
                 <table>
                     <tr>
                         <th>Titel van het liedje</th>

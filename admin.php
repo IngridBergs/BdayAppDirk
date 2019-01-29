@@ -9,21 +9,14 @@ include_once("Assets/Includes/conn.php");
 
 //overview Youtube movies
 
-
 //$sql_queryMovies = "SELECT * FROM user_details WHERE email = 'ingrid.bergs@gmail.com'";
 $sql_queryMovies = "SELECT * FROM user_details";
 $result1 = mysqli_query($mySqlConnection, $sql_queryMovies );
 
 //overview messages
-
 echo "<br><br>";
-
-
-
 $sql_queryA = "SELECT id , name , email , message FROM user_details";
 $result2 = mysqli_query($mySqlConnection, $sql_queryA );
-
-
 mysqli_close($mySqlConnection);
 ?>
 

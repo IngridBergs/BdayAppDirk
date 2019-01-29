@@ -1,7 +1,7 @@
 <?php
 
 //create connection
-$mySqlConnection = new mysqli("localhost", "IngridB", "bananahouse586!", "verjaardagDB");
+$mySqlConnection = new mysqli("localhost", "root", "", "birthdayapp");
 
 //check connection
 

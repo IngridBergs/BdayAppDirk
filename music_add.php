@@ -16,7 +16,7 @@ echo "<br>";
     $result_email = mysqli_query($mySqlConnection, $sql_email );
 
     if(mysqli_num_rows($result_email) > 0){
-        echo "Dit email-adres is al in gebruik, je kan je songs wel updaten";
+        echo "Dit email-adres is reeds in gebruik. Bewerk hier je muziek videos";
         echo "<br>";
         echo "<br>";
         //echo "<html><head></head><body><a href='music_update.php'>UPDATE</a></body></html>";
