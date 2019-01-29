@@ -3,7 +3,7 @@
    //Start new or resume existing session
    //creates a session or resumes the current one based on a
    // session identifier passed via a GET or POST request, or passed via a cookie.
-
+   include_once("Assets/Includes/conn.php");
    session_start();
    echo ("session id" . session_id());
 ?>
@@ -26,11 +26,11 @@
                   $_SESSION['valid'] = true;
                   $_SESSION['timeout'] = time();
                   $_SESSION['username'] = 'DirkVranken';
-                  $msg = 'You have entered valid username and password';
+                  echo "You have entered valid username and password";
                   //maak een knop naar admin.php of schakel die vanaf hier door
                   header('Location: admin.php');
                } else {
-                  $msg = 'Wrong username or password , please try again!';
+                  echo "Wrong username or password , please try again!";
                }
             }
          ?>

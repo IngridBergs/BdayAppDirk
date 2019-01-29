@@ -1,27 +1,17 @@
 <?php
+
+include_once("Assets/Includes/conn.php");
  if  ($_SESSION['valid'] = true){
      echo "<h1>Welkom Dirk</h1>";
  };
 
 
 
-//create connection
-$mySqlConnection = new mysqli("localhost", "IngridB", "bananahouse586!", "verjaardagDB");
-
-//check connection
-
-if (!$mySqlConnection) {
-      die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
-echo "<br><br>";
-
-
-
 //overview Youtube movies
 
 
-$sql_queryMovies = "SELECT * FROM user_details WHERE email = 'ingrid.bergs@gmail.com'";
+//$sql_queryMovies = "SELECT * FROM user_details WHERE email = 'ingrid.bergs@gmail.com'";
+$sql_queryMovies = "SELECT * FROM user_details";
 $result1 = mysqli_query($mySqlConnection, $sql_queryMovies );
 
 //overview messages
@@ -66,18 +56,27 @@ mysqli_close($mySqlConnection);
                     </tr>
 
                     <tr>
-                        <td width="300px"><textarea  class="message"><?php echo($row["id"]); ?></textarea></td>
-                        <td width="300px"><textarea  class="message"><?php echo($row["name"]); ?></textarea></td>
-                        <td width="300px"><textarea  class="message"><?php echo($row["email"]); ?></textarea></td>
-                        <td width="300px"><textarea  class="message"><?php echo($row["title_song"]); ?></textarea></td>
-                        <td width="300px"><textarea  class="message"><?php echo($row["artiest"]); ?></textarea></td>
+                        <td><input type="text" name="id" class="message" value="<?php echo($row['id']); ?>"</td>
+                        <td><input type="text"  name="name" class="message" value="<?php echo($row['name']); ?>"</td>
+                        <td><input type="text"  name="email" class="message" value="<?php echo($row['email']); ?>"</td>
+                        <td><input type="text"  name="title" class="message"value="<?php echo($row['title_song']); ?>"</td>
+                        <td><input type="text"  name="artiest" class="message" value="<?php echo($row['artiest']); ?>"</td>
+                        <!-- zet hier nog Youtube convertor tussen -->
                         <td width="300px"><a href="<?php echo($row['url']); ?>">URL</a></td>
-                        <td width="300px"><iframe width="105" height="78" frameborder="0" allowfullscreen src="<?php echo($row["url"]); ?>">
-                        </iframe></td>
+                        <?php
+                            preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $row["url"], $matches);
+                            $id = $matches[1];
+//src="<?php echo($row["url"]);
+                        ?>
+                        <td width="300px">
+                            <iframe id="ytplayer" type="text/html" width="105" height="78" frameborder="0" allowfullscreen
+                            src="https://www.youtube.com/embed/<?php echo $id; ?>?rel=0&showinfo=0&color=white&iv_load_policy=3">
+                            </iframe>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
                 </table>
-                <a href="export.php">Export To Excel</a>
+                <a href="export_excel_1.php">Export Songs To Excel</a>
 
 
                 <br><br><br>
@@ -92,15 +91,15 @@ mysqli_close($mySqlConnection);
                     </tr>
                 <?php while ($row = mysqli_fetch_assoc($result2)): ?>
                     <tr>
-                        <td width="300px"><textarea  class="message"><?php echo($row["id"]); ?></textarea></td>
-                        <td width="300px"><textarea  class="message"><?php echo($row["name"]); ?></textarea></td>
-                        <td width="300px"><textarea  class="message"><?php echo($row["email"]); ?></textarea></td>
-                        <td width="300px"><textarea  class="message"><?php echo($row["message"]); ?></textarea></td>
+                        <td><input type="text"  name="id" class="message" value="<?php echo($row['id']); ?>"</textarea></td>
+                        <td><input type="text" name="name" class="message" value="<?php echo($row['name']); ?>"</textarea></td>
+                        <td><input type="text" name="email" class="message" value="<?php echo($row['email']); ?>"</textarea></td>
+                        <td><input type="text" name="message" class="message" value="<?php echo($row['message']); ?>"</textarea></td>
                     </tr>
                 <?php endwhile; ?>
                 </table>
                 <!--<button type="button" id="btn" value="EXPORT">EXPORT TO EXCEL</button>-->
-                <a href="export.php">Export To Excel</a>
+                <a href="export_excel_2.php">Export Messages To Excel</a>
                 <!--<button type="button" id="btn" value="EXPORT">PRINT</button>-->
     </body>
 </html>

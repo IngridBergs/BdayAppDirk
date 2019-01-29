@@ -2,16 +2,7 @@
 //export data tot EXCELL
 //http://www.phpcodify.com/export-data-to-excel-in-php-mysql/
 
-//create connection
-$mySqlConnection = new mysqli("localhost", "IngridB", "bananahouse586!", "verjaardagDB");
-
-//check connection
-
-if (!$mySqlConnection) {
-      die("Connection failed: " . mysqli_connect_error());
-}
-//echo "Connected successfully";
-//echo "<br><br>";
+include_once("Assets/Includes/conn.php");
 
 
 
@@ -76,7 +67,7 @@ while ($row = mysqli_fetch_assoc($result2)){
 }
 
 header("Content-type: application/octet-stream");
-header("Content-Disposition: attachment; filename = Messages.xls");
+header("Content-Disposition: attachment; filename = Songs.xls");
 header("Pragma: no-cache");
 header("Expires: 0");
 
