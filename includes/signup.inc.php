@@ -20,7 +20,7 @@ if (isset($_POST['signup-submit'])) {
         header('Location: ../index.php?error=invalidmail&uid=' . $username . '&message=' . $message . '&url1' . $url1 . '&url2' . $url2 . '&url3' . $url3);
         exit();
 
-    } else if (!preg_match('/^[a-zA-Z0-9]*$/', $username)) {
+    } else if (!preg_match('/^([a-zA-Z0-9])*$/', $username)) {
         header('Location: ../index.php?error=invalidmail&message=' . $message . '&url1' . $url1 . '&url2' . $url2 . '&url3' . $url3);
         exit();
     } else {
@@ -32,7 +32,7 @@ if (isset($_POST['signup-submit'])) {
             header('Location: ../index.php?error=sqlerror');
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, 'sssss', $username, $message, $url1, $url2, $url3);
+            mysqli_stmt_bind_param($stmt, 'ssssss', $username, $email, $message, $url1, $url2, $url3);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             $resultCheck = mysqli_stmt_num_rows($stmt);
@@ -47,7 +47,7 @@ if (isset($_POST['signup-submit'])) {
                     header('Location: ../index.php?error=sqlerror');
                     exit();
                 } else {
-                    mysqli_stmt_bind_param($stmt, 'sssss', $username, $message, $url1, $url2, $url3);
+                    mysqli_stmt_bind_param($stmt, 'ssssss', $username, $email, $message, $url1, $url2, $url3);
                     mysqli_stmt_execute($stmt);
                     header('Location: ../index.php?signup=succes');
                     exit();
