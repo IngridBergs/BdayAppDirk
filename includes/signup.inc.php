@@ -51,6 +51,7 @@ if (isset($_POST['signup-submit'])) {
                     mysqli_stmt_execute($stmt);
                     header('Location: ../index.php?signup=succes');
                     exit();
+                    
                 }
             }
         }

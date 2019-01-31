@@ -8,8 +8,8 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["idUsers"]. " - Name: " . $row["uidUsers"]. " E-mail: " . $row["emailUsers"]. "<br> 
-        Nummer 1:" . $row["url1"] . "Nummer 2:" . $row["url2"]. "Nummer 3:" . $row["url3"] . "<br><br>  ";
+        echo "<ul class='rowsuserinfo'><li>no: " . $row["idUsers"]. "</li><li> Naam: " . $row["uidUsers"]. " </li> <li> E-mail: " . $row["emailUsers"]. "</li></ul>
+        <ul class='rowusersongs'>   <li>Nummer 1:" . $row["url1"] . "</li><li>Nummer 2:" . $row["url2"]. "</li><li>Nummer 3:" . $row["url3"] . "</li>  </ul>";
     }
 } else {
     echo "0 results";

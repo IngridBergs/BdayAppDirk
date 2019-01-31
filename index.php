@@ -8,7 +8,7 @@ else if (isset($_SESSION['userNormalMail'])){
     require "userformfilled.php";
 }
 else {
-    $_SESSION['userGuest'] = $title =['Welkom gebruiker'];
+    $_SESSION['userGuest'];
     require "popup.php";
     require "userform.php";
 }

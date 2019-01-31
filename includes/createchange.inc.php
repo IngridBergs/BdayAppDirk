@@ -1,11 +1,9 @@
 <?php
+$mail = $_POST['email'];
 session_unset();
-
 if (isset($_POST['changes-submit'])) {
     require 'dbh.inc.php';
-
-    $mail = $_POST['email'];
-
+    
     if (empty($mail)) {
         header('Location: ../index.php?error=nomailgiven');
         exit();
@@ -33,7 +31,6 @@ if (isset($_POST['changes-submit'])) {
                 }
         }
     }
-
 } else {
     header('Location: ../index.php');
     exit();

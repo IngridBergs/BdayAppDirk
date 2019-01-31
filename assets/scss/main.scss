@@ -15,10 +15,13 @@ header {
     width:100%;
     height:30px;
 }
+#logoutButton,
 #loginButton {
+    color:#fff;
+    border: 0px;
     position: fixed;
-    right:10px;
-    top:5px;
+    right:30px;
+    top:30px;
     font-size: 20px;
     background-color:$secondary-color;
     padding:1%;
@@ -30,24 +33,27 @@ header {
 }
 #loginBar {
     padding:1%;
-    width:180px;
+    width:173px;
     background:$secondary-color;
     display:none;
     position: fixed;
     right:5px;
-    top:5px;
+    top:30px;
     input {
+        float:right;
+        width:inherit;
         border:0px;
         text-align: center;
         border-radius: 2px;
         margin:1px;
     }
     button {
+        float:right;
         border:0px;
         color:$text-white;
         background-color: $fourth-color;
         margin-top:1px;
-        width:100%;
+        width:30px;
         border-radius: 2px;
     }
 }
@@ -59,36 +65,56 @@ body {
     flex-direction: column;
     margin:0;
     padding:0;
-    overflow:hidden;
+    overflow: hidden;
+    .adminCardUserRows{
+        height:100vh;
+        overflow:auto;
+        display:flex;
+        flex-direction: column;
+        margin:-20px 10%;
+        ul {
+            list-style-type: none;
+            li {
+                padding:5px;
+                border: 1px solid $secondary-color;
+            }
+        }
+        ul:nth-child(even) {
+            margin-top:-2%;
+        
+
+        } li:nth-child(odd) {
+            background-color: #2A3258;
+        }
+    }
     
     .popup {
+        margin: 1px auto 5000px auto;
         text-align: center;
         border-radius: 4px;
-        z-index: 1;
-        position:fixed;
-        min-width:150px;
-        max-width:410px;
-        padding: 7% 4% 2%;
-        left:30vw;
-        height:70vh;
+        min-width:350px;
+        max-width:350px;
+        padding: 3% 5% 3%;
+        left:300px;
+        height:50vh;
         background:$secondary-color;
         img {
             height:30%;
+            margin: 0px auto;
         }
         button {
-            margin-top:30px;
-            border:0px;
-            margin-top:2%;
+            margin: 0px auto;
             font-size: 15px;
             font-weight: 500;
             align-items: center;
-            margin:auto 18.5%;
             background-color:$fourth-color;
             border:0px;
             border-radius: 2px;
-            min-width:20vw;
+            min-width:350px;
+            max-width:350px;
             height:35px;
             color:$text-white;
+            
         }
     }
     h1{
@@ -98,30 +124,29 @@ body {
     #userChange{
         border-top: 1px dashed $primary-color;
         padding: 1% 4% 2%;
-        min-width:150px;
+        min-width:400px;
         max-width:400px;
         background:$secondary-color;
         margin: 0px auto;
         input {
             text-align: center;
-            margin-top:2%;
-            margin-bottom:1%;
-            min-width:32vw;
-            max-width:52vw;
+            margin: 10px 5px;
+            min-width:380px;
+            max-width:380px;
             height:35px;
             border-radius: 4px;
             border:0px;
         }
         button {
-            margin-top:2%;
+            margin: 0px 5px;
             font-size: 15px;
             font-weight: 500;
             align-items: center;
-            margin:auto 18.5%;
             background-color:$fourth-color;
             border:0px;
             border-radius: 2px;
-            min-width:20vw;
+            min-width:380px;
+            max-width:380px;
             height:35px;
             color:$text-white;
             
@@ -134,15 +159,15 @@ body {
         flex-direction: column;
         padding:2% 4% 1%;
         border-radius: 1px;
-        min-width:150px;
+        min-width:400px;
         max-width:400px;
         background:$secondary-color;
-        margin: 0 auto;
+        margin: 10px auto 0 auto;
         input {
             text-align: center;
             margin:1%;
-            min-width:32vw;
-            max-width:50vw;
+            min-width:380px;
+            max-width:380px;
             height:35px;
             border-radius: 4px;
             border:0px;
@@ -153,8 +178,8 @@ body {
             border:0px;
             margin:1%;
             border-radius: 4px;
-            min-width:29vw;
-            max-width:50vw;
+            min-width:377px;
+            max-width:377px;
             resize: none;
         } 
 
@@ -162,11 +187,12 @@ body {
             font-size: 15px;
             font-weight: 500;
             align-items: center;
-            margin:auto 20%;
+            margin:auto 1%;
             background-color:$fourth-color;
             border:0px;
             border-radius: 2px;
-            width:20vw;
+            min-width:380px;
+            max-width:380px;
             height:35px;
             color:$text-white;
             
