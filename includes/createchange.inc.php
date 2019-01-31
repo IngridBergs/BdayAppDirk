@@ -1,6 +1,7 @@
 <?php
-$mail = $_POST['email'];
 session_unset();
+$mail = $_POST['email'];
+
 if (isset($_POST['changes-submit'])) {
     require 'dbh.inc.php';
     

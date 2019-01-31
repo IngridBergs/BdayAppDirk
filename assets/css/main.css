@@ -5,6 +5,13 @@ header {
   height: 30px;
 }
 
+.copyright {
+  font-size: 9px;
+  text-align: center;
+  padding-top: 10%;
+  margin-left: -25px;
+}
+
 #logoutButton,
 #loginButton {
   color: #fff;
@@ -22,6 +29,50 @@ header {
 #logoutButton span:hover,
 #loginButton span:hover {
   color: #F4B61D;
+}
+
+.exSongsButton {
+  width: 130px;
+  text-decoration: none;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  position: fixed;
+  left: 15px;
+  top: 25px;
+  font-size: 20px;
+  background-color: #2A3258;
+  border-radius: 3%;
+}
+
+.exSongsButton i {
+  padding-left: 13px;
+  border-left: 1px solid;
+  margin-left: 25px;
+}
+
+.exMessButton {
+  width: 130px;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  position: fixed;
+  left: 15px;
+  top: 75px;
+  font-size: 20px;
+  background-color: #2A3258;
+  border-radius: 3%;
+  text-decoration: none;
+}
+
+.exMessButton i {
+  padding-left: 13px;
+  border-left: 1px solid;
+  margin-left: 10px;
 }
 
 #loginBar {
@@ -51,6 +102,11 @@ header {
   margin-top: 1px;
   width: 30px;
   border-radius: 2px;
+  cursor: pointer;
+}
+
+#loginBar button:hover {
+  background: #F4B61D;
 }
 
 body {
@@ -79,7 +135,7 @@ body .adminCardUserRows {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: -20px 10%;
+  margin: -20px 180px;
 }
 
 body .adminCardUserRows ul {
@@ -87,16 +143,14 @@ body .adminCardUserRows ul {
 }
 
 body .adminCardUserRows ul li {
-  padding: 5px;
+  display: inline-block;
+  padding: 10px;
   border: 1px solid #2A3258;
+  background-color: #2A3258;
 }
 
 body .adminCardUserRows ul:nth-child(even) {
-  margin-top: -2%;
-}
-
-body .adminCardUserRows li:nth-child(odd) {
-  background-color: #2A3258;
+  margin-top: -1%;
 }
 
 body .popup {
@@ -107,7 +161,7 @@ body .popup {
   max-width: 350px;
   padding: 3% 5% 3%;
   left: 300px;
-  height: 50vh;
+  height: 70vh;
   background: #2A3258;
 }
 
@@ -130,6 +184,11 @@ body .popup button {
   max-width: 350px;
   height: 35px;
   color: #ffffff;
+  cursor: pointer;
+}
+
+body .popup button:hover {
+  background: #F4B61D;
 }
 
 body h1 {
@@ -138,12 +197,11 @@ body h1 {
 }
 
 body #userChange {
-  border-top: 1px dashed #779AA5;
   padding: 1% 4% 2%;
   min-width: 400px;
   max-width: 400px;
   background: #2A3258;
-  margin: 0px auto;
+  margin: 5px auto;
 }
 
 body #userChange input {
@@ -170,6 +228,11 @@ body #userChange button {
   max-width: 380px;
   height: 35px;
   color: #ffffff;
+  cursor: pointer;
+}
+
+body #userChange button:hover {
+  background: #F4B61D;
 }
 
 body #userForm {
@@ -228,5 +291,10 @@ body #userForm button {
   max-width: 380px;
   height: 35px;
   color: #ffffff;
+  cursor: pointer;
+}
+
+body #userForm button:hover {
+  background: #F4B61D;
 }
 /*# sourceMappingURL=main.css.map */

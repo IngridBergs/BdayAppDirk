@@ -6,9 +6,9 @@ if (isset($_POST['signup-submit'])) {
     $username = $_POST['uid'];
     $email = $_POST['mail'];
     $message = $_POST['message'];
-    $url1 = $_POST['url1'];
-    $url2 = $_POST['url2'];
-    $url3 = $_POST['url3'];
+    $url1 = htmlentities($_POST['url1']);
+    $url2 = htmlentities($_POST['url2']);
+    $url3 = htmlentities($_POST['url3']);
 
     if (empty($username) || empty($email) || empty($message) || empty($url1) || empty($url2) || empty($url3)) {
         header('Location: ../index.php?error=emptyfields&uid=' . $username . '&mail=' . $email . '&message=' . $message . '&url1' . $url1 . '&url2' . $url2 . '&url3' . $url3);
@@ -47,9 +47,13 @@ if (isset($_POST['signup-submit'])) {
                     header('Location: ../index.php?error=sqlerror');
                     exit();
                 } else {
+                    
                     mysqli_stmt_bind_param($stmt, 'ssssss', $username, $email, $message, $url1, $url2, $url3);
                     mysqli_stmt_execute($stmt);
                     header('Location: ../index.php?signup=succes');
+                    echo "<SCRIPT> //not showing me this
+                    alert('Wij hebben met succes jouw aanvraag geregistreerd.');
+                    </SCRIPT>";
                     exit();
                     
                 }
